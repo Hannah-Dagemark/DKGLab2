@@ -49,19 +49,17 @@ class RecipeListItem extends StatelessWidget {
 
                       Row(
                         children: [
-                          if (recipe.mainIngredient != null)
-                            MainIngredient.icons[MainIngredient.labels.indexOf(
-                                  recipe.mainIngredient,
-                                )] ??
-                                const SizedBox(),
+                          MainIngredient.icons[MainIngredient.labels.indexOf(
+                                recipe.mainIngredient,
+                              )] ??
+                              const SizedBox(),
 
                           const SizedBox(width: 8),
 
-                          if (recipe.difficulty != null)
-                            Difficulty.icons[Difficulty.labels.indexOf(
-                                  recipe.difficulty,
-                                )] ??
-                                const SizedBox(),
+                          Difficulty.icons[Difficulty.labels.indexOf(
+                                recipe.difficulty,
+                              )] ??
+                              const SizedBox(),
 
                           const SizedBox(width: 12),
 

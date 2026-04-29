@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lab2/app_theme.dart';
-import 'package:lab2/util/main_ingredient.dart';
 import 'package:lab2/util/cuisine.dart';
 
 class RecipeCard extends StatelessWidget {
