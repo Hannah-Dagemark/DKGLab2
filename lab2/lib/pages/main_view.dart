@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
 import 'package:lab2/widgets/control_panel.dart';
 import 'package:lab2/widgets/recipe_area.dart';
 
@@ -7,6 +8,19 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Row(children: [ControlPanel(), RecipeArea()]));
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(AppTheme.paddingMedium),
+        child: Row(
+          children: [
+            const ControlPanel(),
+
+            const SizedBox(width: AppTheme.paddingSmall),
+
+            const Expanded(child: RecipeArea()),
+          ],
+        ),
+      ),
+    );
   }
 }

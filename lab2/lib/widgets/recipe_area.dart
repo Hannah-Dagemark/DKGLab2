@@ -17,6 +17,6 @@ class RecipeArea extends StatelessWidget {
     } else {
       contents = RecipeDetail(uiController.selectedRecipe!);
     }
-    return Expanded(child: contents);
+    return contents;
   }
 }

@@ -1,4 +1,4 @@
-When a user clicks on a list item, the light darkens showing signs on visual feedback as well as dynamic visual hinting. 
+When a user clicks on a list item, the light darkens showing signs on visual feedback as well as dynamic visual hinting pliancy. 
 
 
 The filter function on the website visually communicates clearly that it is filtering items, but doesn't inform the user of the details of the changes. When multiple filters are layered on top of eachother, it is impossible to tell what filter might be weighing into the placement of a certain item. 

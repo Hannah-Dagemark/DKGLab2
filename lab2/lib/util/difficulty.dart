@@ -26,7 +26,8 @@ class Difficulty {
         assetName = Assets.difficultyMedium;
       case hard:
         assetName = Assets.difficultyHard;
+        break;
     }
-    return Image.asset(assetName, width: width);
+    return assetName.isEmpty ? null: Image.asset(assetName, width: width);
   }
 }

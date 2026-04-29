@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
+import 'package:lab2/constants/assets.dart';
 import 'package:provider/provider.dart';
 import 'package:lab2/model/recipe_database/recipe_handler.dart';
 
@@ -17,6 +19,13 @@ class _TimeControlState extends State<TimeControl> {
     var recipeHandler = Provider.of<RecipeHandler>(context, listen: false);
     return Column(
       children: [
+        Row(
+          children: [
+            Image.asset(Assets.timeIcon, height: 16),
+            SizedBox(width: AppTheme.paddingSmall),
+            const Text('Tid'),
+          ],
+        ),
         Slider(
           value: _time,
           divisions: 15,
@@ -28,7 +37,15 @@ class _TimeControlState extends State<TimeControl> {
             recipeHandler.setMaxTime(value.round());
           },
         ),
-        Text('${_time.round()} min'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: AppTheme.paddingLarge),
+              child: Text('${_time.round()} min'),
+            ),
+          ],
+        ),
       ],
     );
   }

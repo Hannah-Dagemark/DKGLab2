@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lab2/app_theme.dart';
+import 'package:lab2/widgets/logo.dart';
 import 'ingredient_control.dart';
 import 'kitchen_control.dart';
 import 'difficulty_control.dart';
@@ -16,44 +18,44 @@ class ControlPanel extends StatelessWidget {
       width: width,
       color: const Color.fromARGB(255, 200, 218, 193),
       child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Sök recept'),
-            const SizedBox(height: 8),
+        padding: const EdgeInsets.all(AppTheme.paddingMedium),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Sök recept\n'),
+              const SizedBox(height: AppTheme.paddingSmall),
 
-            const Text('Här kan du filtrera...'),
-            const SizedBox(height: 16),
+              const Logo(),
+              const SizedBox(height: AppTheme.paddingMedium),
 
-            Row(
-              children: const [
-                Text('Ingrediens:'),
-                SizedBox(width: 10),
-                IngredientControl(),
-              ],
-            ),
-            const SizedBox(height: 16),
+              const Text('Här kan du filtrera...'),
+              const SizedBox(height: AppTheme.paddingMedium),
 
-            Row(
-              children: [
-                const Text('Kök'),
-                const SizedBox(width: 10),
-                const KitchenControl(),
-              ],
-            ),
-            const SizedBox(height: 16),
-            const Text('Svårighetsgrad'),
-            DifficultyControl(),
+              const IngredientControl(),
+              const SizedBox(height: AppTheme.paddingMedium),
 
-            const SizedBox(height: 16),
-            const Text('Pris'),
-            PriceControl(),
+              const KitchenControl(),
+              const SizedBox(height: AppTheme.paddingMedium),
 
-            const SizedBox(height: 16),
-            const Text('Tid'),
-            TimeControl(),
-          ],
+              Row(
+                children: [
+                  Text('Svårighetsgrad', style: AppTheme.smallHeading),
+                ],
+              ),
+              DifficultyControl(),
+
+              const SizedBox(height: AppTheme.paddingMedium),
+
+              Row(children: [Text('Pris', style: AppTheme.smallHeading)]),
+              PriceControl(),
+
+              const SizedBox(height: AppTheme.paddingMedium),
+
+              Row(children: [Text('Tid', style: AppTheme.smallHeading)]),
+              TimeControl(),
+            ],
+          ),
         ),
       ),
     );
