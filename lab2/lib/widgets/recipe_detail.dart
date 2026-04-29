@@ -76,7 +76,10 @@ class RecipeDetail extends StatelessWidget {
                   // INGREDIENTS
                   Text('Ingredienser', style: AppTheme.smallHeading),
                   const SizedBox(height: 6),
-                  Text(recipe.ingredients.toString()),
+
+                  for (final recipe in recipe.ingredients)
+                    Text(recipe.toString()),
+                  const SizedBox(height: 6),
 
                   const SizedBox(height: 16),
 
